@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReUse – Economia Circular e Tecnologia Sustentável</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta de cores principal (Verde Sustentável)
+                        primary: tailwind.colors.emerald,
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        .scroller-track {
+            animation: scroll 30s linear infinite;
+        }
+
+        .scroller-track-reverse {
+            animation: scroll-reverse 30s linear infinite;
+        }
+
+        .scroller-track:hover,
+        .scroller-track-reverse:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes scroll-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="container flex h-25 items-center justify-between px-4 md:px-6">
+            
+            <a href="#inicio" class="flex items-center gap-2">
+                <img 
+                    src="logo.png" 
+                    alt="ReUse Logo" 
+                    class="h-40 w-auto"
+                    onerror="this.src='https://placehold.co/150x50/22c55e/ffffff?text=ReUse&font=inter'"
+                >
+            </a>
+
+            <nav class="hidden items-center gap-6 md:flex">
+                <a href="#inicio" class="text-gray-600 transition-colors hover:text-primary-600">Início</a>
+                <a href="#sobre" class="text-gray-600 transition-colors hover:text-primary-600">O Projeto</a>
+                <a href="#como-funciona" class="text-gray-600 transition-colors hover:text-primary-600">Como Funciona</a>
+                <a href="#tecnologia" class="text-gray-600 transition-colors hover:text-primary-600">Tecnologia</a>
+                <a href="#diferenciais" class="text-gray-600 transition-colors hover:text-primary-600">Diferenciais</a>
+                <a href="#parceiros" class="text-gray-600 transition-colors hover:text-primary-600">Parceiros</a>
+            </nav>
+
+            <a href="#" class="hidden rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-700 md:block">
+                Baixe o App (Em Breve)
+            </a>
+
+            <button id="menu-btn" class_name="md:hidden" aria-label="Abrir menu">
+                <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 z-[99] hidden h-screen w-full bg-white px-6 py-8 md:hidden">
+            <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-primary-600">ReUse</span>
+                <button id="close-btn" aria-label="Fechar menu">
+                    <i data-lucide="x" class="h-7 w-7 text-gray-700"></i>
+                </button>
+            </div>
+            <nav class="mt-12 flex flex-col items-center gap-6">
+                <a href="#inicio" class="mobile-link text-2xl font-medium text-gray-700">Início</a>
+                <a href="#sobre" class="mobile-link text-2xl font-medium text-gray-700">O Projeto</a>
+                <a href="#como-funciona" class="mobile-link text-2xl font-medium text-gray-700">Como Funciona</a>
+                <a href="#tecnologia" class="mobile-link text-2xl font-medium text-gray-700">Tecnologia</a>
+                <a href="#diferenciais" class="mobile-link text-2xl font-medium text-gray-700">Diferenciais</a>
+                <a href="#parceiros" class="mobile-link text-2xl font-medium text-gray-700">Parceiros</a>
+            </nav>
+            <a href="#" class="mt-12 block w-full rounded-lg bg-primary-600 px-5 py-3 text-center text-base font-semibold text-white shadow-md">
+                Baixe o App (Em Breve)
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28">
+            <div class="container mx-auto grid grid-cols-1 items-center gap-12 px-4 md:grid-cols-2 md:px-6">
+                <div class="z-10 text-center md:text-left">
+                    <h1 class="text-4xl font-extrabold tracking-tighter text-gray-900 md:text-5xl lg:text-6xl">
+                        A revolução da <span class="text-primary-600">economia circular</span> na sua cidade.
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 md:text-xl">
+                        Facilitamos a doação, troca e venda de itens usados com segurança, curadoria digital e logística própria. Dê uma nova vida aos seus produtos.
+                    </p>
+                    <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
+                        <a href="#como-funciona" class="w-full rounded-lg bg-primary-600 px-8 py-3.5 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-primary-700 sm:w-auto">
+                            Veja Como Funciona
+                        </a>
+                        <a href="#sobre" class="w-full rounded-lg border border-gray-300 bg-white px-8 py-3.5 text-base font-bold text-gray-700 shadow-sm transition-transform hover:scale-105 hover:bg-gray-100 sm:w-auto">
+                            Conheça o Projeto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img 
+                        src="appReuseCidade.webp" 
+                        alt="[Ilustração de um smartphone com o app ReUse tendo a cidade ao fundo]"
+                        class="mx-auto  w-full max-w-md rounded-lg object-cover shadow-2xl md:max-w-none"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto max-w-4xl px-4 text-center md:px-6">
+                <span class="font-semibold uppercase tracking-wider text-primary-600">Nossa Missão</span>
+                <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+                    Reduzir o desperdício e incentivar a reutilização.
+                </h2>
+                <p class="mt-6 text-lg leading-relaxed text-gray-600">
+                    O ReUse enfrenta o problema do consumo e descarte excessivo. Criamos uma plataforma de economia circular que facilita a doação, troca e venda de itens usados, como roupas, móveis e eletrônicos. Com foco local, unimos tecnologia, sustentabilidade e impacto social através de um processo seguro de curadoria e logística própria.
+                </p>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="py-20 md:py-28">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="mx-auto mb-16 max-w-2xl text-center">
+                    <span class="font-semibold uppercase tracking-wider text-primary-600">O Processo</span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+                        Simples, seguro e confiável.
+                    </h2>
+                    <p class="mt-5 text-lg text-gray-600">
+                        Nossa logística própria elimina a necessidade de encontros e garante a qualidade.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <div class="rounded-xl bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                            <i data-lucide="sparkles" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900">1. Curadoria Digital</h3>
+                        <p class="mt-3 text-base text-gray-600">
+                            Você envia fotos e informações do seu item pelo app. Nossa equipe avalia e classifica o produto ("Bom estado", "Semi-novo", etc.) antes de aprovar.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                            <i data-lucide="truck" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900">2. Coleta Sustentável</h3>
+                        <p class="mt-3 text-base text-gray-600">
+                            Após a aprovação, agendamos a coleta na sua casa. Nossos veículos de baixo impacto (bicicletas e triciclos elétricos) buscam o item para nosso galpão.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                            <i data-lucide="layout-grid" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900">3. Novo Dono</h3>
+                        <p class="mt-3 text-base text-gray-600">
+                            O item fica disponível no app para venda, troca ou doação. Nós cuidamos da entrega segura ao novo dono. Simples assim!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologia" class="bg-gray-900 py-20 text-white md:py-28">
+            <div class="container mx-auto grid grid-cols-1 items-center gap-16 px-4 md:grid-cols-2 md:px-6">
+                <div>
+                    <span class="font-semibold uppercase tracking-wider text-primary-400">Nossa Plataforma</span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+                        A tecnologia por trás da mudança.
+                    </h2>
+                    <p class="mt-5 text-lg text-gray-300">
+                        Uma plataforma robusta, desenvolvida para uma experiência fluida, segura e totalmente integrada à logística.
+                    </p>
+
+                    <ul class="mt-10 space-y-6">
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="smartphone" class="h-7 w-7 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Plataforma Intuitiva</h4>
+                                <p class="mt-1 text-gray-300">Um aplicativo fácil de usar, projetado para que qualquer pessoa possa anunciar, trocar ou encontrar itens rapidamente.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="route" class="h-7 w-7 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Logística Otimizada</h4>
+                                <p class="mt-1 text-gray-300">Nosso sistema interno otimiza as rotas de coleta e entrega, garantindo eficiência e menor emissão de carbono.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="lock" class="h-7 w-7 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-white">Segurança e Transparência</h4>
+                                <p class="mt-1 text-gray-300">Seus dados estão protegidos. Todo o processo, da curadoria à entrega, é rastreável dentro do app.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="order-first md:order-last">
+                    <img 
+                        src="tecnologia.webp" 
+                        alt="[Interface do aplicativo ReUse em um smartphone]"
+                        class="w-full rounded-xl object-cover shadow-xl"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto grid grid-cols-1 items-center gap-16 px-4 md:grid-cols-2 md:px-6">
+                <div class="order-last md:order-first">
+                    <img 
+                        src="ecossistema.webp" 
+                        alt="[Equipe da ReUse usando dashboard de logística no galpão]"
+                        class="w-full rounded-xl object-cover shadow-xl"
+                    >
+                </div>
+
+                <div>
+                    <span class="font-semibold uppercase tracking-wider text-primary-600">Nossas Soluções</span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+                        Mais que um app, um ecossistema.
+                    </h2>
+                    <p class="mt-5 text-lg text-gray-600">
+                        Nossos diferenciais são focados na segurança, qualidade e no fortalecimento da comunidade local.
+                    </p>
+
+                    <ul class="mt-10 space-y-6">
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="shield-check" class="h-7 w-7 text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">Foco e Segurança</h4>
+                                <p class="mt-1 text-gray-600">Ao centralizar a logística, eliminamos encontros entre usuários. Garantimos um processo seguro e especializado.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="leaf" class="h-7 w-7 text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">Gamificação Verde</h4>
+                                <p class="mt-1 text-gray-600">Usuários acumulam "Pontos Verdes" que podem ser trocados por benefícios no comércio local parceiro.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="book-open" class="h-7 w-7 text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-900">Educação Ambiental</h4>
+                                <p class="mt-1 text-gray-600">Divulgamos conteúdos educativos e campanhas de conscientização em nossas redes e no app.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="bg-primary-700 py-20 text-white md:py-28">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="mx-auto mb-16 max-w-2xl text-center">
+                    <span class="font-semibold uppercase tracking-wider text-primary-200">Impacto Positivo</span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+                        Gerando valor real para a cidade.
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="rounded-lg bg-primary-600 p-6 shadow-lg">
+                        <i data-lucide="recycle" class="h-10 w-10 text-primary-100"></i>
+                        <h4 class="mt-4 text-2xl font-bold">Ambiental</h4>
+                        <p class="mt-2 text-primary-100">Redução direta de resíduos sólidos e fomento da economia circular.</p>
+                    </div>
+                    <div class="rounded-lg bg-primary-600 p-6 shadow-lg">
+                        <i data-lucide="heart-handshake" class="h-10 w-10 text-primary-100"></i>
+                        <h4 class="mt-4 text-2xl font-bold">Social</h4>
+                        <p class="mt-2 text-primary-100">Direcionamento de doações para ONGs locais e promoção da inclusão.</p>
+                    </div>
+                    <div class="rounded-lg bg-primary-600 p-6 shadow-lg">
+                        <i data-lucide="trending-up" class="h-10 w-10 text-primary-100"></i>
+                        <h4 class="mt-4 text-2xl font-bold">Econômico</h4>
+                        <p class="mt-2 text-primary-100">Fortalecimento do comércio local através dos "Pontos Verdes".</p>
+                    </div>
+                    <div class="rounded-lg bg-primary-600 p-6 shadow-lg">
+                        <i data-lucide="brain" class="h-10 w-10 text-primary-100"></i>
+                        <h4 class="mt-4 text-2xl font-bold">Educativo</h4>
+                        <p class="mt-2 text-primary-100">Conscientização da população sobre o consumo consciente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="parceiros" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="mx-auto mb-16 max-w-3xl text-center">
+                    <span class="font-semibold uppercase tracking-wider text-primary-600">Nossa Rede</span>
+                    <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+                        Juntos pelo impacto local.
+                    </h2>
+                    <p class="mt-5 text-lg text-gray-600">
+                        Nossas parcerias são fundamentais para criar um ecossistema sustentável e fortalecer a comunidade.
+                    </p>
+                </div>
+
+                <div class="space-y-16">
+                    
+                    <div>
+                        <h3 class="mb-8 text-center text-xl font-semibold text-gray-700">Parceiros Sociais (Doações)</h3>
+                        <div class="scroller-container w-full overflow-hidden">
+                            <div class="scroller-track flex w-max gap-8 pr-8">
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Casa do Amor Fraterno</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lar dos Velhinhos</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lar Betel</span>
+                                </div>
+                                
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Casa do Amor Fraterno</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lar dos Velhinhos</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="heart-handshake" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lar Betel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="mb-8 text-center text-xl font-semibold text-gray-700">Parceiros de Sustentabilidade</h3>
+                        <div class="scroller-container w-full overflow-hidden">
+                            <div class="scroller-track-reverse flex w-max gap-8 pr-8">
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Klabin</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Shopping Piracicaba</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Prefeitura de Piracicaba</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">USP/ESALQ</span>
+                                </div>
+
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Klabin</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Shopping Piracicaba</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Prefeitura de Piracicaba</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="leaf" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">USP/ESALQ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-8 text-center text-xl font-semibold text-gray-700">Comércio Local (Pontos Verdes)</h3>
+                        <div class="scroller-container w-full overflow-hidden">
+                            <div class="scroller-track flex w-max gap-8 pr-8" style="animation-duration: 35s;"> <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lojas Parceiras</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Restaurantes</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Pizzarias</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">E muito mais...</span>
+                                </div>
+
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Lojas Parceiras</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Restaurantes</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">Pizzarias</span>
+                                </div>
+                                <div class="flex-shrink-0 items-center gap-3 rounded-lg bg-white p-5 shadow-md border border-gray-100 flex">
+                                    <i data-lucide="store" class="h-6 w-6 text-primary-600"></i>
+                                    <span class="text-lg font-medium text-gray-700">E muito mais...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 py-16 md:px-6">
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <div>
+                    <img
+                        src="logo.png" 
+                        alt="ReUse Logo" 
+                        class="h-40 w-auto"
+                        onerror="this.src='https://placehold.co/150x50/ffffff/1f2937?text=ReUse&font=inter'"
+                    >
+                    <p class="mt-4 max-w-xs text-sm">
+                        Repensando o consumo, uma reutilização de cada vez.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Navegação</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#sobre" class="transition-colors hover:text-white">O Projeto</a></li>
+                        <li><a href="#como-funciona" class="transition-colors hover:text-white">Como Funciona</a></li>
+                        <li><a href="#tecnologia" class="transition-colors hover:text-white">Tecnologia</a></li>
+                        <li><a href="#diferenciais" class="transition-colors hover:text-white">Diferenciais</a></li>
+                        <li><a href="#parceiros" class="transition-colors hover:text-white">Parceiros</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Siga-nos</h4>
+                    <p class="mt-2 text-sm">Acompanhe nossas campanhas de educação ambiental.</p>
+                    <div class="mt-4 flex gap-4">
+                        <a href="#" aria-label="Instagram" class="rounded-full bg-gray-700 p-2 transition-colors hover:bg-primary-600">
+                            <i data-lucide="instagram" class="h-5 w-5 text-white"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="rounded-full bg-gray-700 p-2 transition-colors hover:bg-primary-600">
+                            <i data-lucide="facebook" class="h-5 w-5 text-white"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="rounded-full bg-gray-700 p-2 transition-colors hover:bg-primary-600">
+                            <i data-lucide="linkedin" class="h-5 w-5 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+                <p class="text-sm">&copy; 2025 ReUse. Todos os direitos reservados. Focado no impacto local.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Espera o DOM estar completamente carregado para rodar os scripts
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // Ativa os ícones do Lucide
+            try {
+                lucide.createIcons();
+            } catch (error) {
+                console.error("Erro ao carregar ícones Lucide:", error);
+            }
+
+            // Lógica do Menu Mobile
+            const menuBtn = document.getElementById('menu-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (menuBtn && closeBtn && mobileMenu) {
+                // Abrir menu
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Impede scroll do body
+                });
+
+                // Fechar menu
+                const closeMenu = () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restaura scroll
+                };
+
+                closeBtn.addEventListener('click', closeMenu);
+
+                // Fechar menu ao clicar em um link (para navegar para a seção)
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
