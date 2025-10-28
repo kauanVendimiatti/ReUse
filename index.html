@@ -21,7 +21,6 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // Paleta de cores principal (Verde Sustentável)
                         primary: tailwind.colors.emerald,
                     }
                 }
@@ -62,18 +61,17 @@
 <body class="bg-gray-50 text-gray-800 antialiased">
 
     <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="container flex h-25 items-center justify-between px-4 md:px-6">
+        <div class="container mx-auto flex h-25 items-center justify-between px-4 md:px-6">
             
-            <a href="#inicio" class="flex items-center gap-2">
+            <a href="#inicio" class="flex items-center ">
                 <img 
                     src="logo.png" 
                     alt="ReUse Logo" 
-                    class="h-40 w-auto"
-                    onerror="this.src='https://placehold.co/150x50/22c55e/ffffff?text=ReUse&font=inter'"
+                    class="h-40 w-auto" 
                 >
             </a>
 
-            <nav class="hidden items-center gap-6 md:flex">
+            <nav class="hidden items-center gap-6 lg:flex">
                 <a href="#inicio" class="text-gray-600 transition-colors hover:text-primary-600">Início</a>
                 <a href="#sobre" class="text-gray-600 transition-colors hover:text-primary-600">O Projeto</a>
                 <a href="#como-funciona" class="text-gray-600 transition-colors hover:text-primary-600">Como Funciona</a>
@@ -82,18 +80,18 @@
                 <a href="#parceiros" class="text-gray-600 transition-colors hover:text-primary-600">Parceiros</a>
             </nav>
 
-            <a href="#" class="hidden rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-700 md:block">
+            <a href="#" class="hidden rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-700 lg:block">
                 Baixe o App (Em Breve)
             </a>
 
-            <button id="menu-btn" class_name="md:hidden" aria-label="Abrir menu">
+            <button id="menu-btn" class="lg:hidden" aria-label="Abrir menu">
                 <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 z-[99] hidden h-screen w-full bg-white px-6 py-8 md:hidden">
+        <div id="mobile-menu" class="fixed inset-0 z-[99] hidden h-screen w-full bg-white px-6 py-8 lg:hidden">
             <div class="flex items-center justify-between">
-                <span class="text-2xl font-bold text-primary-600">ReUse</span>
+                <img src="logo.png" alt="ReUse Logo" class="h-14 w-auto">
                 <button id="close-btn" aria-label="Fechar menu">
                     <i data-lucide="x" class="h-7 w-7 text-gray-700"></i>
                 </button>
@@ -111,7 +109,6 @@
             </a>
         </div>
     </header>
-
     <main>
 
         <section id="inicio" class="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28">
@@ -167,7 +164,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             
             <div class="rounded-xl bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
                 <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
@@ -475,7 +472,7 @@
 
     <footer class="bg-gray-900 text-gray-400">
         <div class="container mx-auto px-4 py-16 md:px-6">
-            <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
                 <div>
                     <img
                         src="logo.png" 
